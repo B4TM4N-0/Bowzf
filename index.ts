@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits } from "discord.js";
-import webhookCommand from "../commands/webhook";
+import webhookCommand from "./commands/webhook";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
