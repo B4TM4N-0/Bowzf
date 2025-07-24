@@ -1,7 +1,9 @@
 import { Message } from "discord.js";
 
 export default function webhookCommand(message: Message) {
-  if ("send" in message.channel) {
-    message.channel.send("Webhook command executed!");
+  if (!message.guild || message.author.bot) return;
+
+  if (message.channel && message.channel.isTextBased()) {
+    message.channel.send("✅ Webhook command executed!");
   }
 }
