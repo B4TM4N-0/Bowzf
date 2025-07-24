@@ -17,5 +17,7 @@ export default async function handleEmbedCommand(message: Message) {
     .setColor(0x00AEFF)
     .setFooter({ text: `Embed by ${message.author.username}` });
 
+  if (message.channel.isTextBased()) {
   await message.channel.send({ embeds: [embed] });
+  }
 }
